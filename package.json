@@ -1,0 +1,27 @@
+{
+  "name": "rafaelteruyuki.github.io",
+  "version": "1.0.0",
+  "description": "Personal About Me Page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafaelteruyuki/rafaelteruyuki.github.io.git"
+  },
+  "keywords": [
+    "about",
+    "me",
+    "page"
+  ],
+  "author": "Rafael Teruyuki",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rafaelteruyuki/rafaelteruyuki.github.io/issues"
+  },
+  "homepage": "https://github.com/rafaelteruyuki/rafaelteruyuki.github.io#readme",
+  "devDependencies": {
+    "normalize.css": "^8.0.1"
+  }
+}
