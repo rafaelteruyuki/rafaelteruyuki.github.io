@@ -30,7 +30,8 @@ module.exports = {
         new MiniCssExtractPlugin({ filename: 'style.css' }),
         new CopyWebpackPlugin([
             { context: 'src/', from: '**/*.html' },
-            { context: 'src/', from: 'images/**/*' }
+            { context: 'src/', from: 'images/**/*' },
+            { context: 'src/', from: 'assets/fonts/**/*' }
         ])
     ],
     module: {
