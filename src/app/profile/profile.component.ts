@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { profileConfig } from './profile.config';
-import { Contacts, Course, JobPosition, Language, Skill, SocialMedia } from './profile.interface';
+import { DateHelper } from '../helpers/date-helper';
+import { profileConfig } from '../config/profile.config';
+import { Contacts, Course, JobPosition, Language, Skill, SocialMedia } from '../config/profile.interface';
 
 @Component({
   selector: 'app-profile',
@@ -8,11 +9,15 @@ import { Contacts, Course, JobPosition, Language, Skill, SocialMedia } from './p
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
+  
   private profileConfig = profileConfig;
 
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.workExperience);
+    console.log(this.education);
+        
   }
 
   get name(): string {
@@ -44,29 +49,44 @@ export class ProfileComponent implements OnInit {
   }
 
   get education(): Course[] {
-    throw Error('Method needs to be implemented.');
+    const courses = this.profileConfig.education.map(course => {
+      course.period = DateHelper.formatPeriod(course.startDate, course.endDate, 'course');
+      return course;
+    });
+    return this.sort(courses) as Course[];
   }
 
   get workExperience(): JobPosition[] {
-    throw Error('Method needs to be implemented.');
+    const jobs = this.profileConfig.workExperience.map(job => {
+      job.period = DateHelper.formatPeriod(job.startDate, job.endDate, 'job');
+      return job;
+    });
+    return this.sort(jobs) as JobPosition[];
   }
 
   get age(): string {
-    const birthDate = this.dateFactory(this.profileConfig.birthDate);
+    const birthDate = DateHelper.dateFactory(this.profileConfig.birthDate);
     const today = new Date();
     const m = today.getMonth() - birthDate.getMonth();
-
     let age = today.getFullYear() - birthDate.getFullYear();
 
     if(m < 0 || m === 0 && (today.getDate() < birthDate.getDate())) {
       age--;
     }
-
     return `${age} yo`;
   }
 
-  private dateFactory(stringDate: string): Date {
-    return new Date(stringDate.split('-').reverse().join(','));
+  private sort(target: Course[] | JobPosition[]): Course[] | JobPosition[] {
+    return target.sort(
+      (a: Course | JobPosition, b: Course | JobPosition) => {
+        if(!a.endDate) {
+          return -1;
+        }
+        if(DateHelper.dateFactory(a.endDate) > DateHelper.dateFactory(b.endDate)) {
+          return -1;
+        }
+        return 0;
+    });
   }
 
 }

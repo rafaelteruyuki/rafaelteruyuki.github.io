@@ -64,6 +64,11 @@ export const profileConfig: Profile = {
         endDate: '15/09/2017',
         institution: 'FIAP',
         title: 'MBA - Moble Apps and Games Development - Internet of Things'
+      },
+      {
+        startDate: '15/09/2021',
+        institution: 'Alura',
+        title: 'TypeScript'
       }
     ],
     workExperience: [
@@ -89,3 +94,4 @@ export const profileConfig: Profile = {
       }
     ]
   }
+  

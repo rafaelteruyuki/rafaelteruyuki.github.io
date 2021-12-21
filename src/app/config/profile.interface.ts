@@ -35,7 +35,7 @@ export interface JobPosition {
 
 export interface Course {
     startDate: string;
-    endDate: string;
+    endDate?: string;
     period?: string;
     title: string;
     institution: string;
