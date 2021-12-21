@@ -52,7 +52,21 @@ export class ProfileComponent implements OnInit {
   }
 
   get age(): string {
-    throw Error('Method needs to be implemented.');
+    const birthDate = this.dateFactory(this.profileConfig.birthDate);
+    const today = new Date();
+    const m = today.getMonth() - birthDate.getMonth();
+
+    let age = today.getFullYear() - birthDate.getFullYear();
+
+    if(m < 0 || m === 0 && (today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+
+    return `${age} yo`;
+  }
+
+  private dateFactory(stringDate: string): Date {
+    return new Date(stringDate.split('-').reverse().join(','));
   }
 
 }
