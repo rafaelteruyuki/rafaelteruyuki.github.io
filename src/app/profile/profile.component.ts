@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DateHelper } from '../helpers/date-helper';
 import { profileConfig } from '../config/profile.config';
-import { Contacts, Course, JobPosition, Language, Skill, SocialMedia } from '../config/profile.interface';
+import { Contacts, Course, JobPosition, Language, Location, Skill, SocialMedia } from '../config/profile.interface';
+import { LanguageLevel } from '../config/language-level.enum';
 
 @Component({
   selector: 'app-profile',
@@ -15,13 +16,18 @@ export class ProfileComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.workExperience);
-    console.log(this.education);
-        
   }
 
   get name(): string {
     return this.profileConfig.name;
+  }
+
+  get secondName(): string {
+    return this.profileConfig.secondName;
+  }
+
+  get lastName(): string {
+    return this.profileConfig.lastName;
   }
 
   get occupation(): string {
@@ -36,12 +42,19 @@ export class ProfileComponent implements OnInit {
     return this.profileConfig.contacts;
   }
 
-  get socialMedia(): SocialMedia {
+  get location(): Location {
+    return this.profileConfig.location;
+  }
+
+  get socialMedia(): SocialMedia[] {
     return this.profileConfig.socialMedia;
   }
 
-  get laguages(): Language[] {
-    return this.profileConfig.laguages;
+  get languages(): Language[] {
+    return this.profileConfig.laguages.map(laguage => {
+      laguage.rate = LanguageLevel[laguage.level];
+      return laguage;
+    });
   }
 
   get skills(): Skill[] {

@@ -1,10 +1,13 @@
 export interface Profile {
     name: string;
-    occupation: string;
+    secondName: string;
+    lastName: string;
     birthDate: string;
+    location: Location;
+    occupation: string;
     contacts: Contacts;
     aboutMe: string;
-    socialMedia: SocialMedia;
+    socialMedia: SocialMedia[];
     education: Course[];
     workExperience: JobPosition[];
     skills: Skill[];
@@ -12,16 +15,19 @@ export interface Profile {
 }
 
 export interface Contacts {
-    telephone: string;
     email: string;
+    telephone: string;
+}
+
+export interface Location {
+    label: string;
+    url: string;
 }
 
 export interface SocialMedia {
-    instagram?: string;
-    twitter?: string;
-    linkedin?: string;
-    github?: string;
-    site?: string;
+    label: string;
+    url: string;
+    icon: string;
 }
 
 export interface JobPosition {
@@ -49,4 +55,5 @@ export interface Skill {
 export interface Language {
     name: string;
     level: 'Basic' | 'Advanced' | 'Fluent' | 'Native';
+    rate?: number;
 }

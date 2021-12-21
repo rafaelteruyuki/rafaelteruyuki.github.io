@@ -1,21 +1,48 @@
 import { Profile } from "./profile.interface";
 
 export const profileConfig: Profile = {
-    name: 'Rafael Teruyuki',
-    occupation: 'Front-end Developer',
+    name: 'Rafael',
+    secondName: 'Teruyuki',
+    lastName: 'Yamaguchi',
+    location: {
+      label: 'São Paulo, Brazil',
+      url: 'https://goo.gl/maps/Q87Dm1QjMfYv37Ms9'
+    },
     birthDate: '08/03/1989',
+    occupation: 'Front-end Developer',
     aboutMe: 'I started as a graphic designer, now I write front-end code, read birth charts and check tarot cards.',
     contacts: {
       email: 'rafaelteruyuki08@gmail.com',
       telephone: '+55 11 98650-0584'
     },
-    socialMedia: {
-      github: 'https://github.com/rafaelteruyuki',
-      linkedin: 'https://www.linkedin.com/in/rafaelteruyuki/',
-      instagram: 'https://instagram.com/rafaelteruyuki',
-      twitter: 'https://twitter.com/rafaelteruyuki',
-      site: 'https://rafaelteruyuki.github.io/'
-    },
+    socialMedia: [
+      {
+        label: 'github.com/rafaelteruyuki',
+        url: 'https://github.com/rafaelteruyuki',
+        icon: 'fab fa-github'
+      },
+      {
+        label: 'linkedin.com/in/rafaelteruyuki',
+        url: 'https://www.linkedin.com/in/rafaelteruyuki/',
+        icon: 'fab fa-linkedin-in'
+      },
+      {
+        label: 'instagram.com/rafaelteruyuki',
+        url: 'https://instagram.com/rafaelteruyuki',
+        icon: 'fab fa-instagram'
+      },
+      {
+        label: 'twitter.com/rafaelteruyuki',
+        url: 'https://twitter.com/rafaelteruyuki',
+        icon: 'fab fa-twitter'
+      },
+      {
+        label: 'rafaelteruyuki.github.io',
+        url: 'https://rafaelteruyuki.github.io/',
+        icon: 'fas fa-globe'
+      }
+
+    ],
     laguages: [
       {
         name: 'Portuguese',
@@ -25,6 +52,10 @@ export const profileConfig: Profile = {
         name: 'English',
         level: 'Advanced'
       },
+      {
+        name: 'French',
+        level: 'Basic'
+      }
     ],
     skills: [
       {
