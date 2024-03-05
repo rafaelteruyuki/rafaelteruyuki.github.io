@@ -125,9 +125,9 @@ body {
 	}
 	h2, a.follow {
 		display: block;
-		margin-top: $p/3;
+		margin-top: calc($p/3);
 		border-radius: 2px;
-		padding: $p/2;
+		padding: calc($p/2);
 		color: white;
 		font-size: 12px;
 		font-weight: 500;
@@ -158,10 +158,10 @@ body {
 	ul {
 		display: flex;
 		justify-content: center;
-		padding: $p/2;
+		padding: calc($p/2);
 		width: 100%;
 		li {
-			padding: $p/2;
+			padding: calc($p/2);
 		}
 	}
 	a.link {
