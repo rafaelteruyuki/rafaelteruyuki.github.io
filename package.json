@@ -4,10 +4,7 @@
   "description": "Personal link page",
   "main": "index.js",
   "scripts": {
-    "watch": "sass scss/style.scss css/style.css --watch",
-    "sass": "sass scss/style.scss css/style.css --style=compressed",
-    "compile": "npm run sass",
-    "start": "npm run watch"
+    "start": "sass scss/style.scss css/style.css --style=compressed --watch"
   },
   "author": "Rafael Teruyuki Yamaguchi",
   "license": "ISC",
