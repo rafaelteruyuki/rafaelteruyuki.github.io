@@ -4,8 +4,14 @@
   "description": "Personal link page",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch": "sass scss/style.scss css/style.css --watch",
+    "sass": "sass scss/style.scss css/style.css --style=compressed",
+    "compile": "npm run sass",
+    "start": "npm run watch"
   },
   "author": "Rafael Teruyuki Yamaguchi",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.71.1"
+  }
 }

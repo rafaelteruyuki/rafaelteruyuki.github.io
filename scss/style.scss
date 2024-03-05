@@ -6,9 +6,13 @@ $font: "brandon-grotesque", "Brandon Grotesque", "Source Sans Pro", "Segoe UI", 
 $p: 12px;
 
 * { box-sizing: border-box; -webkit-tap-highlight-color: rgba(0,0,0,0); user-select: none; cursor: default; }
+
 *:focus { outline: none!important; }
+
 body, html { height: 100vh; }
+
 a, a * { cursor: pointer!important; }
+
 body {
 	display: flex;
 	align-items: center;
@@ -16,7 +20,7 @@ body {
 	justify-content: center;
 	padding: $p;
 	background: mix($red, $blue);
-	background: linear-gradient(135deg, rgba($red,1) 0%,rgba($blue,1) 100%);
+	background: linear-gradient(135deg, #FF6F61 0%, #5F4B8B 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$red', endColorstr='$blue',GradientType=1);
 	color: $grey;
 	font-family: $font;
@@ -99,7 +103,7 @@ body {
 }
 
 .avatar {
-	background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/345377/selca-red.jpg') no-repeat top center / cover;
+	background: url('../img/avatar.jpg') no-repeat top center / cover;
 	clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%);
 }
 
